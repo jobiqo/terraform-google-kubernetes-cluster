@@ -38,6 +38,16 @@ resource "google_container_cluster" "primary" {
 
   initial_node_count       = 1
   remove_default_node_pool = true
+
+  addons_config = {
+    network_policy_config = {
+      enabled = true
+    }
+  }
+
+  network_policy = {
+    enabled = true
+  }
 }
 
 resource "google_container_cluster" "primary-regional" {
@@ -66,6 +76,16 @@ resource "google_container_cluster" "primary-regional" {
 
   initial_node_count       = 1
   remove_default_node_pool = true
+
+  addons_config = {
+    network_policy_config = {
+      enabled = true
+    }
+  }
+
+  network_policy = {
+    enabled = true
+  }
 }
 
 resource "google_container_cluster" "primary-nat" {
