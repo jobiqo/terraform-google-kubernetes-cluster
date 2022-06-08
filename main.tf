@@ -46,6 +46,7 @@ resource "google_container_cluster" "primary" {
   }
 
   network_policy {
+    provider = "CALICO"
     enabled = true
   }
 }
@@ -84,6 +85,7 @@ resource "google_container_cluster" "primary-regional" {
   }
 
   network_policy {
+    provider = "CALICO"
     enabled = true
   }
 }
@@ -133,6 +135,7 @@ resource "google_container_cluster" "primary-nat" {
   }
 
   network_policy {
+    provider = "CALICO"
     enabled = true
   }
 }
@@ -184,6 +187,7 @@ resource "google_container_cluster" "primary-regional-nat" {
   }
 
   network_policy {
+    provider = "CALICO"
     enabled = true
   }
 }
