@@ -125,6 +125,16 @@ resource "google_container_cluster" "primary-nat" {
 
   initial_node_count       = 1
   remove_default_node_pool = true
+
+  addons_config {
+    network_policy_config {
+      disabled = false
+    }
+  }
+
+  network_policy {
+    enabled = true
+  }
 }
 
 resource "google_container_cluster" "primary-regional-nat" {
@@ -166,6 +176,16 @@ resource "google_container_cluster" "primary-regional-nat" {
 
   initial_node_count       = 1
   remove_default_node_pool = true
+
+  addons_config {
+    network_policy_config {
+      disabled = false
+    }
+  }
+
+  network_policy {
+    enabled = true
+  }
 }
 
 module "node-pool" {
